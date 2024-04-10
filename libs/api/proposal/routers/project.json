@@ -1,0 +1,36 @@
+{
+  "name": "api-proposal-routers",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/proposal/routers/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "main": "libs/api/proposal/routers/src/index.ts",
+        "outputPath": "dist/libs/api/proposal/routers",
+        "outputFileName": "main.js",
+        "tsConfig": "libs/api/proposal/routers/tsconfig.lib.json",
+        "assets": [
+          {
+            "glob": "libs/api/proposal/routers/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ],
+        "platform": "node"
+      },
+      "configurations": {
+        "development": {
+          "minify": false
+        },
+        "production": {
+          "minify": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "api-current-routers",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/current/routers/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "main": "libs/api/current/routers/src/index.ts",
+        "outputPath": "dist/libs/api/current/routers",
+        "outputFileName": "main.js",
+        "tsConfig": "libs/api/current/routers/tsconfig.lib.json",
+        "assets": [
+          {
+            "glob": "libs/api/current/routers/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ],
+        "platform": "node"
+      },
+      "configurations": {
+        "development": {
+          "minify": false
+        },
+        "production": {
+          "minify": true
+        }
+      }
+    }
+  }
+}

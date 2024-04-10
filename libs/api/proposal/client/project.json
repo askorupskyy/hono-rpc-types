@@ -1,0 +1,36 @@
+{
+  "name": "api-proposal-client",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/proposal/client/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "main": "libs/api/proposal/client/src/index.ts",
+        "outputPath": "dist/libs/api/proposal/client",
+        "outputFileName": "main.js",
+        "tsConfig": "libs/api/proposal/client/tsconfig.lib.json",
+        "assets": [
+          {
+            "glob": "libs/api/proposal/client/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ],
+        "platform": "node"
+      },
+      "configurations": {
+        "development": {
+          "minify": false
+        },
+        "production": {
+          "minify": true
+        }
+      }
+    }
+  }
+}

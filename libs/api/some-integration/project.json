@@ -1,0 +1,36 @@
+{
+  "name": "api-some-integration",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/some-integration/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "main": "libs/api/some-integration/src/index.ts",
+        "outputPath": "dist/libs/api/some-integration",
+        "outputFileName": "main.js",
+        "tsConfig": "libs/api/some-integration/tsconfig.lib.json",
+        "assets": [
+          {
+            "glob": "libs/api/some-integration/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ],
+        "platform": "node"
+      },
+      "configurations": {
+        "development": {
+          "minify": false
+        },
+        "production": {
+          "minify": true
+        }
+      }
+    }
+  }
+}

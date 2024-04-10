@@ -1,0 +1,36 @@
+{
+  "name": "api-env",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/env/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "main": "libs/api/env/src/index.ts",
+        "outputPath": "dist/libs/api/env",
+        "outputFileName": "main.js",
+        "tsConfig": "libs/api/env/tsconfig.lib.json",
+        "assets": [
+          {
+            "glob": "libs/api/env/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ],
+        "platform": "node"
+      },
+      "configurations": {
+        "development": {
+          "minify": false
+        },
+        "production": {
+          "minify": true
+        }
+      }
+    }
+  }
+}

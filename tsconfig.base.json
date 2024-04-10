@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/api-current-client": ["libs/api/current/client/src/index.ts"],
+      "@/api-current-routers": ["libs/api/current/routers/src/index.ts"],
+      "@/api-env": ["libs/api/env/src/index.ts"],
+      "@/api-proposal-client": ["libs/api/proposal/client/src/index.ts"],
+      "@/api-proposal-def": ["libs/api/proposal/def/src/index.ts"],
+      "@/api-proposal-routers": ["libs/api/proposal/routers/src/index.ts"],
+      "@/api-some-integration": ["libs/api/some-integration/src/index.ts"],
+      "@/www-env": ["libs/www/env/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "api-proposal-def",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/proposal/def/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "main": "libs/api/proposal/def/src/index.ts",
+        "outputPath": "dist/libs/api/proposal/def",
+        "outputFileName": "main.js",
+        "tsConfig": "libs/api/proposal/def/tsconfig.lib.json",
+        "assets": [
+          {
+            "glob": "libs/api/proposal/def/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ],
+        "platform": "node"
+      },
+      "configurations": {
+        "development": {
+          "minify": false
+        },
+        "production": {
+          "minify": true
+        }
+      }
+    }
+  }
+}

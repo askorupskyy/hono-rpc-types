@@ -1,0 +1,9 @@
+{
+  "name": "www-env",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/www/env/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project www-env --web",
+  "targets": {}
+}
